@@ -17,7 +17,7 @@ function onGeoOk(position){
 function onGeoError(){
     const weather = document.querySelector("#weather .weather");
     weather.innerText = "undefined. please allow location.";
-}
+} 
 
 
 
