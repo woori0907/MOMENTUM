@@ -28,7 +28,19 @@ body{
 
 #weather{
     margin-top: 220px;
-    margin-bottom: 30px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#weather .icon{
+    margin-bottom: 5px;
+}
+
+
+#weather .weather{
+    margin-top: 5px;
 }
 
 #clock{
