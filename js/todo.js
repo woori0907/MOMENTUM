@@ -6,6 +6,16 @@ const TODOS_KEY = "todos";
 
 let toDos = [];
 
+
+function checkToDoCount(){
+  if(toDos.length > 3){
+    toDoForm.classList.add("hidden");
+  }
+  else{
+    toDoForm.classList.remove("hidden");
+  }
+}
+
 function saveToDos(){
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
@@ -14,11 +24,12 @@ function deleteToDo(e){
    const li = e.target.parentElement;
    li.remove();
    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-   console.log(toDos);
    saveToDos();
+   checkToDoCount();
 }
 
 function paintToDo(newTodo) {
+  checkToDoCount();
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
@@ -31,6 +42,7 @@ function paintToDo(newTodo) {
   li.appendChild(span);
   li.appendChild(close);
   toDoList.appendChild(li);
+
 }
 
 function handleToDoSubmit(e) {
@@ -47,6 +59,7 @@ function handleToDoSubmit(e) {
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
 
 
 const savedToDos = localStorage.getItem(TODOS_KEY);

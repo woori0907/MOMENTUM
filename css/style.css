@@ -4,7 +4,7 @@
 
 .hidden{
     display: none;
-    animation: 1s ease-in 0.5s;
+    animation: 1000 ease-in 500;
 }
 
 .font-color-white{
@@ -27,8 +27,8 @@ body{
 }
 
 #weather{
-    margin-top: 220px;
-   
+    margin-top: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
