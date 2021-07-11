@@ -4,7 +4,6 @@
 
 .hidden{
     display: none;
-    animation: 1000 ease-in 500;
 }
 
 .font-color-white{
@@ -24,7 +23,45 @@ body{
     flex: 1;
     flex-direction: column;
     align-items: center;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
 }
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 #weather{
     margin-top: 150px;
@@ -63,8 +100,6 @@ body{
 #login-form input::placeholder, #todo-form input::placeholder{
     color: white;
 }
-
-
 
 #todo-list li{
     margin-bottom: 15px;
